@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ResearchTabDef>
+    <defName>SCS_ResearchTab</defName>
+    <label>Slomow's bionics</label>
+  </ResearchTabDef>
+
+  <ResearchProjectDef>
+    <defName>SCS_Nanomachines</defName>
+    <label>Nanomachines</label>
+    <description>utulize nanomachines for full power!
+
+Making these bionics will require at least an professional crafter to make them and a skilled professional doctor to install them.</description>
+    <baseCost>10000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>Bionics</li>
+    </prerequisites>
+    <tab>SCS_ResearchTab</tab>
+    <researchViewX>0</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef>
+</Defs>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef Name="CombatAdvancedBionicsBase" ParentName="BodyPartBionicBase" Abstract="True">
+    <techLevel>Ultra</techLevel>
+    <statBases>
+      <WorkToMake>55000</WorkToMake>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>SCS_Nanomachines</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>16</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <thingCategories Inherit="False">
+      <li>SCS_BodyPartsArtificial</li>
+    </thingCategories>
+    <tradeTags>
+      <li>TechHediff</li>
+    </tradeTags>
+  </ThingDef>
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>SCS_hediff_NanomachineHeart</defName>
+    <label>Nanomachine heart</label>
+    <description>An advanced artificial heart with nanomachines and hardening capability for combat purpose.</description>
+    <labelNoun>a nanomachine heart</labelNoun>
+    <defaultLabelColor>(0.6,0.85,0.91)</defaultLabelColor>
+    <stages>
+      <li>
+        <statOffsets>
+          <ArmorRating_Blunt>2.0</ArmorRating_Blunt>
+          <ArmorRating_Heat>2.0</ArmorRating_Heat>
+          <ArmorRating_Sharp>1.8</ArmorRating_Sharp>
+          <MeleeDodgeChance>20</MeleeDodgeChance>
+          <FoodPoisonChanceFixedHuman>-0.80</FoodPoisonChanceFixedHuman>
+          <Insulation_Cold>100</Insulation_Cold>
+          <Insulation_Heat>100</Insulation_Heat>
+          <CarryingCapacity>+250</CarryingCapacity>
+          <BluntDamageMultiplier>2</BluntDamageMultiplier>
+          <IncomingDamageFactor>-0.7</IncomingDamageFactor>
+          <ImmunityGainSpeed>0.8</ImmunityGainSpeed>
+          <InjuryHealingFactor>5.0</InjuryHealingFactor>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.80</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <spawnThingOnRemoved>SCS_NanomachineHeart</spawnThingOnRemoved>
+    <descriptionHyperlinks>
+      <ThingDef>SCS_NanomachineHeart</ThingDef>
+    </descriptionHyperlinks>
+    <comps>
+      <!--
+      <li Class="O21Toolbox.AutoHeal.CompProperties_AutoHeal">
+        <healTicks>1200</healTicks>
+        <regrowParts>true</regrowParts>
+        <cureTicks>300</cureTicks>
+        <removeInfections>true</removeInfections>
+        <infectionsAllowed />
+        <explicitRemovals>
+          <li>FibrousMechanites</li>
+          <li>SensoryMechanites</li>
+          <li>Dementia</li>
+          <li>Alzheimers</li>
+          <li>Asthma</li>
+          <li>HeartArteryBlockage</li>
+          <li>Carcinoma</li>
+          <li>HearingLoss</li>
+          <li>Cataract</li>
+          <li>BadBack</li>
+          <li>Frail</li>
+          <li>ResurrectionPsychosis</li>
+        </explicitRemovals>
+        <growthTicks>600</growthTicks>
+        <growthText>Growth: </growthText>
+        <protoBodyPart>O21_AutoHeal_ProtoBodypart</protoBodyPart>
+        <curedBodyPart>O21_AutoHeal_ProtoBodypart</curedBodyPart>
+      </li>
+      -->
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>arm</label>
+            <capacities>
+              <li>Poke</li>
+            </capacities>
+            <power>12.0</power>
+            <cooldownTime>0.25</cooldownTime>
+            <alwaysTreatAsWeapon>false</alwaysTreatAsWeapon>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>5.00</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+  </HediffDef>
+
+  <ThingDef ParentName="CombatAdvancedBionicsBase">
+    <defName>SCS_NanomachineHeart</defName>
+    <label>Nanomachine Heart</label>
+    <description>An advanced artificial heart with nanomachines and hardening capability for combat purpose. (Replacement)</description>
+    <costList>
+      <Gold>500</Gold>
+      <Plasteel>250</Plasteel>
+      <ComponentSpacer>50</ComponentSpacer>
+    </costList>
+    <statBases>
+      <Mass>2</Mass>
+    </statBases>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>SCS_InstallNanomachineHeart</defName>
+    <label>install Nanomachine Heart</label>
+    <description>Install Nanomachine Heart.</description>
+    <descriptionHyperlinks>
+      <ThingDef>SCS_NanomachineHeart</ThingDef>
+      <HediffDef>SCS_hediff_NanomachineHeart</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing Nanomachine,son.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SCS_NanomachineHeart</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>SCS_NanomachineHeart</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Heart</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>SCS_hediff_NanomachineHeart</addsHediff>
+    <skillRequirements>
+      <Medicine>15</Medicine>
+    </skillRequirements>
+  </RecipeDef>
+
+</Defs>
