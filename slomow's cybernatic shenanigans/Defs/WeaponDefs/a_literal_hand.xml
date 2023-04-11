@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="BaseBullet">
+        <defName>SCS_Bullet_AliteralHand</defName>
+        <label>a chunk of rock</label>
+        <graphicData>
+            <texPath>Things/Item/Chunk/ChunkStone</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <flipExtraRotation>80</flipExtraRotation>
+        </graphicData>
+        <thingClass>Projectile_Explosive</thingClass>
+        <projectile>
+            <speed>22</speed>
+            <damageDef>Bomb</damageDef>
+            <!-- Use default damage from explosion def -->
+            <explosionRadius>1.5</explosionRadius>
+            <preExplosionSpawnThingDef>Filth_RubbleRock</preExplosionSpawnThingDef>
+            <ai_IsIncendiary>false</ai_IsIncendiary>
+            <arcHeightFactor>0.55</arcHeightFactor>
+            <shadowSize>0.6</shadowSize>
+        </projectile>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseHumanMakeableGun">
+        <defName>SCS_Gun_A_Literal_hand</defName>
+        <label>A literal hand</label>
+        <description>A hand, grab rocks , throw rocks.</description>
+        <graphicData>
+            <texPath>Things/Item/Weapons/a_literal_hand</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <soundInteract>Interact_Rifle</soundInteract>
+        <generateCommonality>0.3</generateCommonality>
+        <statBases>
+            <WorkToMake>10000</WorkToMake>
+            <Mass>3.4</Mass>
+            <RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+        </statBases>
+        <costList>
+            <Steel>75</Steel>
+            <ComponentIndustrial>4</ComponentIndustrial>
+        </costList>
+        <recipeMaker>
+            <recipeUsers>
+                <li>TableMachining</li>
+            </recipeUsers>
+            <researchPrerequisite>Gunsmithing</researchPrerequisite>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>SCS_Bullet_AliteralHand</defaultProjectile>
+                <warmupTime>3.5</warmupTime>
+                <range>23.9</range>
+                <forcedMissRadius>2.9</forcedMissRadius>
+                <burstShotCount>1</burstShotCount>
+                <soundCast>ThrowGrenade</soundCast>
+                <soundCastTail>GunTail_Medium</soundCastTail>
+                <muzzleFlashScale>14</muzzleFlashScale>
+                <targetParams>
+                    <canTargetLocations>true</canTargetLocations>
+                </targetParams>
+            </li>
+        </verbs>
+        <weaponTags>
+            <li>SCS_Bullsht</li>
+        </weaponTags>
+        <tools>
+            <li>
+                <label>palm</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+            <li>
+                <label>finger</label>
+                <capacities>
+                    <li>Blunt</li>
+                    <li>Poke</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+        </tools>
+    </ThingDef>
+</Defs>

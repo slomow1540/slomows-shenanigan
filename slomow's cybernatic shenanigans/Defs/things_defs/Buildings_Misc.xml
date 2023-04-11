@@ -23,15 +23,20 @@
         <canOverlapZones>false</canOverlapZones>
         <pathCost>42</pathCost>
         <statBases>
-            <MaxHitPoints>100</MaxHitPoints>
+            <MaxHitPoints>10000</MaxHitPoints>
             <WorkToBuild>1800</WorkToBuild>
-            <Mass>20</Mass>
+            <Mass>69420</Mass>
             <Flammability>0.5</Flammability>
         </statBases>
         <size>(1,1)</size>
         <costList>
-            <AIPersonaCore>5</AIPersonaCore>
-            <Plasteel>100</Plasteel>
+            <AIPersonaCore>10</AIPersonaCore>
+            <Plasteel>5000</Plasteel>
+            <Steel>3000</Steel>
+            <Gold>5000</Gold>
+            <Silver>10000</Silver>
+            <Jade>1500</Jade>
+            <Uranium>10000</Uranium>
         </costList>
         <building>
             <destroySound>BuildingDestroyed_Metal_Small</destroySound>
@@ -48,9 +53,10 @@
         <comps>
             <li Class="CompProperties_Facility">
                 <statOffsets>
-                    <WorkTableWorkSpeedFactor>100</WorkTableWorkSpeedFactor>
+                    <WorkTableWorkSpeedFactor>500</WorkTableWorkSpeedFactor>
+                    <ResearchSpeedFactor>100</ResearchSpeedFactor>
                 </statOffsets>
-                <maxSimultaneous>2</maxSimultaneous>
+                <maxSimultaneous>1</maxSimultaneous>
             </li>
         </comps>
         <designationHotKey>Misc6</designationHotKey>
